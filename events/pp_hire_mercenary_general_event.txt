@@ -1,0 +1,177 @@
+####################################
+### Hire Mercenary General Event ###
+####################################
+namespace = pp_event_hire_mercenary_general
+country_event = {
+	id = pp_event_hire_mercenary_general.1
+	title = pp_event_hire_mercenary_general.1.t
+	desc = pp_event_hire_mercenary_general.1.d
+	picture = CORRUPTION_eventPicture
+
+	is_triggered_only = yes
+
+	trigger = {
+		ai = no
+		pp_scripted_trigger_game_difficulty = yes
+	}
+
+	#mean_time_to_happen = {}
+
+	#immediate = {}
+
+	option = {
+		name = pp_event_hire_mercenary_general.1.a
+		trigger = {
+			#Nothing
+		}
+		ROOT = {
+			create_general = { tradition = 40 }
+			pp_scripted_effect_corruption_cost = yes
+			pp_scripted_effect_game_difficulty_set_cost = yes
+		}
+	}
+	option = {
+		name = pp_event_hire_mercenary_general.1.b
+		trigger = {
+			#Nothing
+		}
+		ROOT = {
+			create_general = { tradition = 100 }
+			pp_scripted_effect_corruption_cost = yes
+			pp_scripted_effect_game_difficulty_var_cost = {
+				lowCost = -0.30
+				normalCost = -0.45
+				highCost = -0.60
+			}
+		}
+	}
+	option = {
+		name = pp_event_hire_mercenary_general.1.c
+		trigger = {
+			#Nothing
+		}
+		ROOT = {
+			create_admiral = { tradition = 40 }
+			pp_scripted_effect_corruption_cost = yes
+			pp_scripted_effect_game_difficulty_set_cost = yes
+		}
+	}
+	option = {
+		name = pp_event_hire_mercenary_general.1.e
+		trigger = {
+			#Nothing
+		}
+		ROOT = {
+			create_admiral = { tradition = 100 }
+			pp_scripted_effect_corruption_cost = yes
+			pp_scripted_effect_game_difficulty_var_cost = {
+				lowCost = -0.30
+				normalCost = -0.45
+				highCost = -0.60
+			}
+		}
+	}
+	option = {
+		name = pp_event_hire_mercenary_general.1.f
+		trigger = {
+			FROM = { exploration_ideas = 1 }
+		}
+		ROOT = {
+			create_conquistador = { tradition = 40 }
+			pp_scripted_effect_corruption_cost = yes
+			pp_scripted_effect_game_difficulty_set_cost = yes
+		}
+	}
+	option = {
+		name = pp_event_hire_mercenary_general.1.g
+		trigger = {
+			FROM = { exploration_ideas = 1 }
+		}
+		ROOT = {
+			create_conquistador = { tradition = 100 }
+			pp_scripted_effect_corruption_cost = yes
+			pp_scripted_effect_game_difficulty_var_cost = {
+				lowCost = -0.30
+				normalCost = -0.45
+				highCost = -0.60
+			}
+		}
+	}
+	option = {
+		name = pp_event_hire_mercenary_general.1.h
+		trigger = {
+			FROM = { exploration_ideas = 1 }
+		}
+		ROOT = {
+			create_explorer = { tradition = 40 }
+			pp_scripted_effect_corruption_cost = yes
+			pp_scripted_effect_game_difficulty_set_cost = yes
+		}
+	}
+	option = {
+		name = pp_event_hire_mercenary_general.1.i
+		trigger = {
+			FROM = { exploration_ideas = 1 }
+		}
+		ROOT = {
+			create_explorer = { tradition = 100 }
+			pp_scripted_effect_corruption_cost = yes
+			pp_scripted_effect_game_difficulty_var_cost = {
+				lowCost = -0.30
+				normalCost = -0.45
+				highCost = -0.60
+			}
+		}
+	}
+	option = {
+		name = pp_event_hire_mercenary_general.1.j
+		trigger = {
+			NOT = {
+				has_leader = "Adept Siege General"
+			}
+		}
+		ROOT = {
+			define_general = {
+				name = "Adept Siege General"
+				female = yes
+				shock = 0
+				fire = 0
+				manuever = 0
+				siege = 3
+				trait = siege_specialist_personality
+			}
+			pp_scripted_effect_corruption_cost = yes
+			pp_scripted_effect_game_difficulty_set_cost = yes
+		}
+	}
+	option = {
+		name = pp_event_hire_mercenary_general.1.k
+		trigger = {
+			NOT = {
+				has_leader = "Master Siege General"
+			}
+		}
+		ROOT = {
+			define_general = {
+				name = "Master Siege General"
+				female = yes
+				shock = 0
+				fire = 0
+				manuever = 0
+				siege = 6
+				trait = siege_specialist_personality
+			}
+			pp_scripted_effect_corruption_cost = yes
+			pp_scripted_effect_game_difficulty_var_cost = {
+				lowCost = -0.30
+				normalCost = -0.45
+				highCost = -0.60
+			}
+		}
+	}
+	option = {
+		name = pp_event_do_nothing.1.z
+		highlight = yes
+		trigger = {	always = yes }
+	}
+}

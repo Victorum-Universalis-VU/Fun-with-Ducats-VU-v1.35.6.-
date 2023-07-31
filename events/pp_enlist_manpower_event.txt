@@ -1,0 +1,91 @@
+#############################
+### Enlist Manpower Event ###
+#############################
+namespace = pp_event_enlist_manpower
+country_event = {
+	id = pp_event_enlist_manpower.1
+	title = pp_event_enlist_manpower.1.t
+	desc = pp_event_enlist_manpower.1.d
+	picture = BATTLE_eventPicture
+
+	is_triggered_only = yes
+
+	trigger = {
+		ai = no
+		pp_scripted_trigger_game_difficulty = yes
+	}
+
+	#mean_time_to_happen = {}
+
+	#immediate = {}
+
+	option = {
+		name = pp_event_enlist_manpower.1.a
+		trigger = {
+			#Nothing
+		}
+		custom_tooltip = pp_event_enlist_manpower_tooltip.1.a
+		ROOT = {
+			add_manpower = 1
+			add_treasury = -10
+			pp_scripted_effect_game_difficulty_var_cost = {
+				lowCost = -0.003
+				normalCost = -0.006
+				highCost = -0.009
+			}
+			pp_scripted_effect_inflation_cost = yes
+		}
+	}
+	option = {
+		name = pp_event_enlist_manpower.1.b
+		trigger = {
+			#Nothing
+		}
+		custom_tooltip = pp_event_enlist_manpower_tooltip.1.a
+		ROOT = {
+			add_manpower = 5
+			add_treasury = -50
+			pp_scripted_effect_game_difficulty_var_cost = {
+				lowCost = -0.015
+				normalCost = -0.03
+				highCost = -0.045
+			}
+			pp_scripted_effect_inflation_cost = yes
+		}
+	}
+	option = {
+		name = pp_event_enlist_manpower.1.c
+		trigger = {
+			#Nothing
+		}
+		custom_tooltip = pp_event_enlist_manpower_tooltip.1.a
+		ROOT = {
+			add_manpower = 10
+			add_treasury = -100
+			pp_scripted_effect_game_difficulty_var_cost = {
+				lowCost = -0.03
+				normalCost = -0.06
+				highCost = -0.09
+			}
+			pp_scripted_effect_inflation_cost = yes
+		}
+	}
+	option = {
+		name = pp_event_enlist_manpower.1.e
+		trigger = {
+			#Nothing
+		}
+		custom_tooltip = pp_event_enlist_manpower_tooltip.1.a
+		ROOT = {
+			add_manpower = 50
+			add_treasury = -500
+			pp_scripted_effect_game_difficulty_set_cost = yes
+			pp_scripted_effect_inflation_cost = yes
+		}
+	}
+	option = {
+		name = pp_event_do_nothing.1.z
+		highlight = yes
+		trigger = {	always = yes }
+	}
+}

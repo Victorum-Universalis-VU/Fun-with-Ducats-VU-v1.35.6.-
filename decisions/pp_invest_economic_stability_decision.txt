@@ -1,0 +1,55 @@
+##########################################
+### Invest Economic Stability Decision ###
+##########################################
+
+country_decisions = {
+	pp_decision_invest_economic_stability = {
+		major = no
+		potential = {
+			ai = no
+			pp_scripted_trigger_game_difficulty = yes
+		}
+		allow = {
+			ai = no
+			stability = -3
+			NOT = { stability = 3 }
+		}
+		effect = {
+			if = {
+				limit = {
+					stability = 2
+					NOT = { stability = 3 }
+				}
+				add_stability = 1
+				pp_scripted_effect_inflation_cost = yes
+				pp_scripted_effect_game_difficulty_var_cost = {
+					lowCost = -0.25
+					normalCost = -0.40
+					highCost = -0.55
+				}
+			}
+			else_if = {
+				limit = {
+					stability = 1
+					NOT = { stability = 2 }
+				}
+				add_stability = 1
+				pp_scripted_effect_inflation_cost = yes
+				pp_scripted_effect_game_difficulty_var_cost = {
+					lowCost = -0.20
+					normalCost = -0.35
+					highCost = -0.50
+				}
+			}
+			else_if = {
+				limit = {
+					stability = -3
+					NOT = { stability = 1 }
+				}
+				add_stability = 1
+				pp_scripted_effect_inflation_cost = yes
+				pp_scripted_effect_game_difficulty_set_cost = yes
+			}
+		}
+	}
+}

@@ -1,0 +1,22 @@
+#############################################
+### Donate Reduce War Exhaustion Decision ###
+#############################################
+
+country_decisions = {
+	pp_decision_donate_reduce_war_exhaustion = {
+		major = no
+		potential = {
+			ai = no
+			pp_scripted_trigger_game_difficulty = yes
+		}
+		allow = {
+			ai = no
+			war_exhaustion = 0.1
+		}
+		effect = {
+			add_war_exhaustion = -2
+			pp_scripted_effect_inflation_cost = yes
+			pp_scripted_effect_game_difficulty_set_cost = yes
+		}
+	}
+}

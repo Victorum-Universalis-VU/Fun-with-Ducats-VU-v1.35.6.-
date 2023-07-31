@@ -1,0 +1,836 @@
+#######################
+### Unlock Missions ###
+#######################
+namespace = pp_event_open_secure_safe
+country_event = {
+	id = pp_event_open_secure_safe.1
+	title = pp_event_open_secure_safe.1.t
+	desc = pp_event_open_secure_safe.1.d
+	picture = TRADEGOODS_eventPicture
+
+#is_triggered_only = no
+
+	trigger = {
+		ai = no
+		pp_scripted_trigger_game_difficulty = yes
+		has_country_flag = allow_subterfuge_actions
+		NOT = { has_country_flag = allow_open_secure_safe }
+		NOT = { has_country_flag = block_open_secure_safe }
+	}
+
+#mean_time_to_happen = {}
+
+#immediate = {}
+
+	option = {
+		name = pp_event_leave_it_locked.1.z
+		highlight = yes
+		trigger = { always = yes }
+		set_country_flag = block_open_secure_safe
+	}
+	option = {
+		name = pp_event_open_secure_safe.1.0
+		trigger = { always = yes }
+	}
+	option = {
+		name = pp_event_open_secure_safe.1.1
+		trigger = { always = yes }
+	}
+	option = {
+		name = pp_event_open_secure_safe.1.2
+		trigger = { always = yes }
+	}
+	option = {
+		name = pp_event_open_secure_safe.1.3
+		trigger = { always = yes }
+	}
+	option = {
+		name = pp_event_open_secure_safe.1.4
+		trigger = { always = yes }
+	}
+	option = {
+		name = pp_event_open_secure_safe.1.5
+		trigger = { always = yes }
+	}
+	option = {
+		name = pp_event_open_secure_safe.1.6
+		trigger = { always = yes }
+	}
+	option = {
+		name = pp_event_open_secure_safe.1.7
+		trigger = { always = yes }
+	}
+	option = {
+		name = pp_event_open_secure_safe.1.8
+		trigger = { always = yes }
+	}
+	option = {
+		name = pp_event_open_secure_safe.1.9
+		trigger = { always = yes }
+	}
+	option = {
+		name = pp_event_open_secure_safe.1.10
+		trigger = { always = yes }
+	}
+	option = {
+		name = pp_event_open_secure_safe.1.11
+		trigger = { always = yes }
+	}
+	option = {
+		name = pp_event_open_secure_safe.1.12
+		trigger = { always = yes }
+	}
+	option = {
+		name = pp_event_open_secure_safe.1.13
+		trigger = { always = yes }
+	}
+	option = {
+		name = pp_event_open_secure_safe.1.14
+		trigger = { always = yes }
+	}
+	option = {
+		name = pp_event_open_secure_safe.1.15
+		trigger = { always = yes }
+	}
+	option = {
+		name = pp_event_open_secure_safe.1.16
+		trigger = { always = yes }
+	}
+	option = {
+		name = pp_event_open_secure_safe.1.17
+		trigger = { always = yes }
+	}
+	option = {
+		name = pp_event_open_secure_safe.1.18
+		trigger = { always = yes }
+	}
+	option = {
+		name = pp_event_open_secure_safe.1.19
+		trigger = { always = yes }
+	}
+	option = {
+		name = pp_event_open_secure_safe.1.20
+		trigger = { always = yes }
+	}
+	option = {
+		name = pp_event_open_secure_safe.1.21
+		trigger = { always = yes }
+	}
+	option = {
+		name = pp_event_open_secure_safe.1.22
+		trigger = { always = yes }
+	}
+	option = {
+		name = pp_event_open_secure_safe.1.23
+		trigger = { always = yes }
+	}
+	option = {
+		name = pp_event_open_secure_safe.1.24
+		trigger = { always = yes }
+	}
+	option = {
+		name = pp_event_open_secure_safe.1.25
+		trigger = { always = yes }
+	}
+	option = {
+		name = pp_event_open_secure_safe.1.26
+		trigger = { always = yes }
+	}
+	option = {
+		name = pp_event_open_secure_safe.1.27
+		trigger = { always = yes }
+	}
+	option = {
+		name = pp_event_open_secure_safe.1.28
+		trigger = { always = yes }
+	}
+	option = {
+		name = pp_event_open_secure_safe.1.29
+		trigger = { always = yes }
+	}
+	option = {
+		name = pp_event_open_secure_safe.1.30
+		trigger = { always = yes }
+	}
+	option = {
+		name = pp_event_open_secure_safe.1.31
+		trigger = { always = yes }
+	}
+	option = {
+		name = pp_event_open_secure_safe.1.32
+		trigger = { always = yes }
+	}
+	option = {
+		name = pp_event_open_secure_safe.1.33
+		trigger = { always = yes }
+	}
+	option = {
+		name = pp_event_open_secure_safe.1.34
+		trigger = { always = yes }
+	}
+	option = {
+		name = pp_event_open_secure_safe.1.35
+		trigger = { always = yes }
+	}
+	option = {
+		name = pp_event_open_secure_safe.1.36
+		trigger = { always = yes }
+	}
+	option = {
+		name = pp_event_open_secure_safe.1.37
+		trigger = { always = yes }
+	}
+	option = {
+		name = pp_event_open_secure_safe.1.38
+		trigger = { always = yes }
+	}
+	option = {
+		name = pp_event_open_secure_safe.1.39
+		trigger = { always = yes }
+	}
+	option = {
+		name = pp_event_open_secure_safe.1.40
+		trigger = { always = yes }
+	}
+	option = {
+		name = pp_event_open_secure_safe.1.41
+		trigger = { always = yes }
+	}
+	option = {
+		name = pp_event_open_secure_safe.1.42
+		trigger = { always = yes }
+	}
+	option = {
+		name = pp_event_open_secure_safe.1.43
+		trigger = { always = yes }
+	}
+	option = {
+		name = pp_event_open_secure_safe.1.44
+		trigger = { always = yes }
+	}
+	option = {
+		name = pp_event_open_secure_safe.1.45
+		trigger = { always = yes }
+	}
+	option = {
+		name = pp_event_open_secure_safe.1.46
+		trigger = { always = yes }
+	}
+	option = {
+		name = pp_event_open_secure_safe.1.47
+		trigger = { always = yes }
+	}
+	option = {
+		name = pp_event_open_secure_safe.1.48
+		trigger = { always = yes }
+	}
+	option = {
+		name = pp_event_open_secure_safe.1.49
+		trigger = { always = yes }
+	}
+	option = {
+		name = pp_event_open_secure_safe.1.50
+		trigger = { always = yes }
+	}
+	option = {
+		name = pp_event_open_secure_safe.1.51
+		trigger = { always = yes }
+	}
+	option = {
+		name = pp_event_open_secure_safe.1.52
+		trigger = { always = yes }
+	}
+	option = {
+		name = pp_event_open_secure_safe.1.53
+		trigger = { always = yes }
+	}
+	option = {
+		name = pp_event_open_secure_safe.1.54
+		trigger = { always = yes }
+	}
+	option = {
+		name = pp_event_open_secure_safe.1.55
+		trigger = { always = yes }
+	}
+	option = {
+		name = pp_event_open_secure_safe.1.56
+		trigger = { always = yes }
+	}
+	option = {
+		name = pp_event_open_secure_safe.1.57
+		trigger = { always = yes }
+	}
+	option = {
+		name = pp_event_open_secure_safe.1.58
+		trigger = { always = yes }
+	}
+	option = {
+		name = pp_event_open_secure_safe.1.59
+		trigger = { always = yes }
+	}
+	option = {
+		name = pp_event_open_secure_safe.1.60
+		trigger = { always = yes }
+	}
+	option = {
+		name = pp_event_open_secure_safe.1.61
+		trigger = { always = yes }
+	}
+	option = {
+		name = pp_event_open_secure_safe.1.62
+		trigger = { always = yes }
+	}
+	option = {
+		name = pp_event_open_secure_safe.1.63
+		trigger = { always = yes }
+	}
+	option = {
+		name = pp_event_open_secure_safe.1.64
+		trigger = { always = yes }
+	}
+	option = {
+		name = pp_event_open_secure_safe.1.65
+		trigger = { always = yes }
+	}
+	option = {
+		name = pp_event_open_secure_safe.1.66
+		trigger = { always = yes }
+	}
+	option = {
+		name = pp_event_open_secure_safe.1.67
+		trigger = { always = yes }
+	}
+	option = {
+		name = pp_event_open_secure_safe.1.68
+		trigger = { always = yes }
+	}
+	option = {
+		name = pp_event_open_secure_safe.1.69
+		trigger = { always = yes }
+	}
+	option = {
+		name = pp_event_open_secure_safe.1.70
+		trigger = { always = yes }
+	}
+	option = {
+		name = pp_event_open_secure_safe.1.71
+		trigger = { always = yes }
+	}
+	option = {
+		name = pp_event_open_secure_safe.1.72
+		trigger = { always = yes }
+	}
+	option = {
+		name = pp_event_open_secure_safe.1.73
+		trigger = { always = yes }
+	}
+	option = {
+		name = pp_event_open_secure_safe.1.74
+		trigger = { always = yes }
+	}
+	option = {
+		name = pp_event_open_secure_safe.1.75
+		trigger = { always = yes }
+	}
+	option = {
+		name = pp_event_open_secure_safe.1.76
+		trigger = { always = yes }
+	}
+	option = {
+		name = pp_event_open_secure_safe.1.77
+		trigger = { always = yes }
+	}
+	option = {
+		name = pp_event_open_secure_safe.1.78
+		trigger = { always = yes }
+	}
+	option = {
+		name = pp_event_open_secure_safe.1.79
+		trigger = { always = yes }
+	}
+	option = {
+		name = pp_event_open_secure_safe.1.80
+		trigger = { always = yes }
+	}
+	option = {
+		name = pp_event_open_secure_safe.1.81
+		trigger = { always = yes }
+	}
+	option = {
+		name = pp_event_open_secure_safe.1.82
+		trigger = { always = yes }
+	}
+	option = {
+		name = pp_event_open_secure_safe.1.83
+		trigger = { always = yes }
+	}
+	option = {
+		name = pp_event_open_secure_safe.1.84
+		trigger = { always = yes }
+	}
+	option = {
+		name = pp_event_open_secure_safe.1.85
+		trigger = { always = yes }
+	}
+	option = {
+		name = pp_event_open_secure_safe.1.86
+		trigger = { always = yes }
+	}
+	option = {
+		name = pp_event_open_secure_safe.1.87
+		trigger = { always = yes }
+	}
+	option = {
+		name = pp_event_open_secure_safe.1.88
+		trigger = { always = yes }
+	}
+	option = {
+		name = pp_event_open_secure_safe.1.89
+		trigger = { always = yes }
+	}
+	option = {
+		name = pp_event_open_secure_safe.1.90
+		trigger = { always = yes }
+	}
+	option = {
+		name = pp_event_open_secure_safe.1.91
+		trigger = { always = yes }
+	}
+	option = {
+		name = pp_event_open_secure_safe.1.92
+		trigger = { always = yes }
+	}
+	option = {
+		name = pp_event_open_secure_safe.1.93
+		trigger = { always = yes }
+	}
+	option = {
+		name = pp_event_open_secure_safe.1.94
+		trigger = { always = yes }
+	}
+	option = {
+		name = pp_event_open_secure_safe.1.95
+		trigger = { always = yes }
+	}
+	option = {
+		name = pp_event_open_secure_safe.1.96
+		trigger = { always = yes }
+	}
+	option = {
+		name = pp_event_open_secure_safe.1.97
+		trigger = { always = yes }
+	}
+	option = {
+		name = pp_event_open_secure_safe.1.98
+		trigger = { always = yes }
+	}
+	option = {
+		name = pp_event_open_secure_safe.1.99
+		trigger = { always = yes }
+	}
+	option = {
+		name = pp_event_open_secure_safe.1.100
+		trigger = { always = yes }
+	}
+	option = {
+		name = pp_event_open_secure_safe.1.101
+		trigger = { always = yes }
+	}
+	option = {
+		name = pp_event_open_secure_safe.1.102
+		trigger = { always = yes }
+	}
+	option = {
+		name = pp_event_open_secure_safe.1.103
+		trigger = { always = yes }
+	}
+	option = {
+		name = pp_event_open_secure_safe.1.104
+		trigger = { always = yes }
+	}
+	option = {
+		name = pp_event_open_secure_safe.1.105
+		trigger = { always = yes }
+	}
+	option = {
+		name = pp_event_open_secure_safe.1.106
+		trigger = { always = yes }
+	}
+	option = {
+		name = pp_event_open_secure_safe.1.107
+		trigger = { always = yes }
+	}
+	option = {
+		name = pp_event_open_secure_safe.1.108
+		trigger = { always = yes }
+	}
+	option = {
+		name = pp_event_open_secure_safe.1.109
+		trigger = { always = yes }
+	}
+	option = {
+		name = pp_event_open_secure_safe.1.110
+		trigger = { always = yes }
+	}
+	option = {
+		name = pp_event_open_secure_safe.1.111
+		trigger = { always = yes }
+	}
+	option = {
+		name = pp_event_open_secure_safe.1.112
+		trigger = { always = yes }
+	}
+	option = {
+		name = pp_event_open_secure_safe.1.113
+		trigger = { always = yes }
+	}
+	option = {
+		name = pp_event_open_secure_safe.1.114
+		trigger = { always = yes }
+	}
+	option = {
+		name = pp_event_open_secure_safe.1.115
+		trigger = { always = yes }
+	}
+	option = {
+		name = pp_event_open_secure_safe.1.116
+		trigger = { always = yes }
+	}
+	option = {
+		name = pp_event_open_secure_safe.1.117
+		trigger = { always = yes }
+	}
+	option = {
+		name = pp_event_open_secure_safe.1.118
+		trigger = { always = yes }
+	}
+	option = {
+		name = pp_event_open_secure_safe.1.119
+		trigger = { always = yes }
+	}
+	option = {
+		name = pp_event_open_secure_safe.1.120
+		trigger = { always = yes }
+	}
+	option = {
+		name = pp_event_open_secure_safe.1.121
+		trigger = { always = yes }
+	}
+	option = {
+		name = pp_event_open_secure_safe.1.122
+		trigger = { always = yes }
+	}
+	option = {
+		name = pp_event_open_secure_safe.1.123
+		trigger = { always = yes }
+	}
+	option = {
+		name = pp_event_open_secure_safe.1.124
+		trigger = { always = yes }
+	}
+	option = {
+		name = pp_event_open_secure_safe.1.125
+		trigger = { always = yes }
+	}
+	option = {
+		name = pp_event_open_secure_safe.1.126
+		trigger = { always = yes }
+	}
+	option = {
+		name = pp_event_open_secure_safe.1.127
+		trigger = { always = yes }
+	}
+	option = {
+		name = pp_event_open_secure_safe.1.128
+		trigger = { always = yes }
+	}
+	option = {
+		name = pp_event_open_secure_safe.1.129
+		trigger = { always = yes }
+	}
+	option = {
+		name = pp_event_open_secure_safe.1.130
+		trigger = { always = yes }
+	}
+	option = {
+		name = pp_event_open_secure_safe.1.131
+		trigger = { always = yes }
+	}
+	option = {
+		name = pp_event_open_secure_safe.1.132
+		trigger = { always = yes }
+	}
+	option = {
+		name = pp_event_open_secure_safe.1.133
+		trigger = { always = yes }
+	}
+	option = {
+		name = pp_event_open_secure_safe.1.134
+		trigger = { always = yes }
+	}
+	option = {
+		name = pp_event_open_secure_safe.1.135
+		trigger = { always = yes }
+	}
+	option = {
+		name = pp_event_open_secure_safe.1.136
+		trigger = { always = yes }
+	}
+	option = {
+		name = pp_event_open_secure_safe.1.137
+		trigger = { always = yes }
+	}
+	option = {
+		name = pp_event_open_secure_safe.1.138
+		trigger = { always = yes }
+	}
+	option = {
+		name = pp_event_open_secure_safe.1.139
+		trigger = { always = yes }
+	}
+	option = {
+		name = pp_event_open_secure_safe.1.140
+		trigger = { always = yes }
+	}
+	option = {
+		name = pp_event_open_secure_safe.1.141
+		trigger = { always = yes }
+	}
+	option = {
+		name = pp_event_open_secure_safe.1.142
+		trigger = { always = yes }
+	}
+	option = {
+		name = pp_event_open_secure_safe.1.143
+		trigger = { always = yes }
+	}
+	option = {
+		name = pp_event_open_secure_safe.1.144
+		trigger = { always = yes }
+	}
+	option = {
+		name = pp_event_open_secure_safe.1.145
+		trigger = { always = yes }
+	}
+	option = {
+		name = pp_event_open_secure_safe.1.146
+		trigger = { always = yes }
+	}
+	option = { #These are not the droids your looking for...
+		name = pp_event_open_secure_safe.1.147
+		trigger = { always = yes }
+		set_country_flag = allow_open_secure_safe
+		hidden_effect = {
+			swap_non_generic_missions = yes
+		}
+		custom_tooltip = pp_event_click.1.a
+	}
+	option = {
+		name = pp_event_open_secure_safe.1.148
+		trigger = { always = yes }
+	}
+	option = {
+		name = pp_event_open_secure_safe.1.149
+		trigger = { always = yes }
+	}
+	option = {
+		name = pp_event_open_secure_safe.1.150
+		trigger = { always = yes }
+	}
+	option = {
+		name = pp_event_open_secure_safe.1.151
+		trigger = { always = yes }
+	}
+	option = {
+		name = pp_event_open_secure_safe.1.152
+		trigger = { always = yes }
+	}
+	option = {
+		name = pp_event_open_secure_safe.1.153
+		trigger = { always = yes }
+	}
+	option = {
+		name = pp_event_open_secure_safe.1.154
+		trigger = { always = yes }
+	}
+	option = {
+		name = pp_event_open_secure_safe.1.155
+		trigger = { always = yes }
+	}
+	option = {
+		name = pp_event_open_secure_safe.1.156
+		trigger = { always = yes }
+	}
+	option = {
+		name = pp_event_open_secure_safe.1.157
+		trigger = { always = yes }
+	}
+	option = {
+		name = pp_event_open_secure_safe.1.158
+		trigger = { always = yes }
+	}
+	option = {
+		name = pp_event_open_secure_safe.1.159
+		trigger = { always = yes }
+	}
+	option = {
+		name = pp_event_open_secure_safe.1.160
+		trigger = { always = yes }
+	}
+	option = {
+		name = pp_event_open_secure_safe.1.161
+		trigger = { always = yes }
+	}
+	option = {
+		name = pp_event_open_secure_safe.1.162
+		trigger = { always = yes }
+	}
+	option = {
+		name = pp_event_open_secure_safe.1.163
+		trigger = { always = yes }
+	}
+	option = {
+		name = pp_event_open_secure_safe.1.164
+		trigger = { always = yes }
+	}
+	option = {
+		name = pp_event_open_secure_safe.1.165
+		trigger = { always = yes }
+	}
+	option = {
+		name = pp_event_open_secure_safe.1.166
+		trigger = { always = yes }
+	}
+	option = {
+		name = pp_event_open_secure_safe.1.167
+		trigger = { always = yes }
+	}
+	option = {
+		name = pp_event_open_secure_safe.1.168
+		trigger = { always = yes }
+	}
+	option = {
+		name = pp_event_open_secure_safe.1.169
+		trigger = { always = yes }
+	}
+	option = {
+		name = pp_event_open_secure_safe.1.170
+		trigger = { always = yes }
+	}
+	option = {
+		name = pp_event_open_secure_safe.1.171
+		trigger = { always = yes }
+	}
+	option = {
+		name = pp_event_open_secure_safe.1.172
+		trigger = { always = yes }
+	}
+	option = {
+		name = pp_event_open_secure_safe.1.173
+		trigger = { always = yes }
+	}
+	option = {
+		name = pp_event_open_secure_safe.1.174
+		trigger = { always = yes }
+	}
+	option = {
+		name = pp_event_open_secure_safe.1.175
+		trigger = { always = yes }
+	}
+	option = {
+		name = pp_event_open_secure_safe.1.176
+		trigger = { always = yes }
+	}
+	option = {
+		name = pp_event_open_secure_safe.1.177
+		trigger = { always = yes }
+	}
+	option = {
+		name = pp_event_open_secure_safe.1.178
+		trigger = { always = yes }
+	}
+	option = {
+		name = pp_event_open_secure_safe.1.179
+		trigger = { always = yes }
+	}
+	option = {
+		name = pp_event_open_secure_safe.1.180
+		trigger = { always = yes }
+	}
+	option = {
+		name = pp_event_open_secure_safe.1.181
+		trigger = { always = yes }
+	}
+	option = {
+		name = pp_event_open_secure_safe.1.182
+		trigger = { always = yes }
+	}
+	option = {
+		name = pp_event_open_secure_safe.1.183
+		trigger = { always = yes }
+	}
+	option = {
+		name = pp_event_open_secure_safe.1.184
+		trigger = { always = yes }
+	}
+	option = {
+		name = pp_event_open_secure_safe.1.185
+		trigger = { always = yes }
+	}
+	option = {
+		name = pp_event_open_secure_safe.1.186
+		trigger = { always = yes }
+	}
+	option = {
+		name = pp_event_open_secure_safe.1.187
+		trigger = { always = yes }
+	}
+	option = {
+		name = pp_event_open_secure_safe.1.188
+		trigger = { always = yes }
+	}
+	option = {
+		name = pp_event_open_secure_safe.1.189
+		trigger = { always = yes }
+	}
+	option = {
+		name = pp_event_open_secure_safe.1.190
+		trigger = { always = yes }
+	}
+	option = {
+		name = pp_event_open_secure_safe.1.191
+		trigger = { always = yes }
+	}
+	option = {
+		name = pp_event_open_secure_safe.1.192
+		trigger = { always = yes }
+	}
+	option = {
+		name = pp_event_open_secure_safe.1.193
+		trigger = { always = yes }
+	}
+	option = {
+		name = pp_event_open_secure_safe.1.194
+		trigger = { always = yes }
+	}
+	option = {
+		name = pp_event_open_secure_safe.1.195
+		trigger = { always = yes }
+	}
+	option = {
+		name = pp_event_open_secure_safe.1.196
+		trigger = { always = yes }
+	}
+	option = {
+		name = pp_event_open_secure_safe.1.197
+		trigger = { always = yes }
+	}
+	option = {
+		name = pp_event_open_secure_safe.1.198
+		trigger = { always = yes }
+	}
+	option = {
+		name = pp_event_open_secure_safe.1.199
+		trigger = { always = yes }
+	}
+}

@@ -1,0 +1,23 @@
+###################################
+### Subterfuge Actions Decision ###
+###################################
+
+country_decisions = {
+	pp_decision_subterfuge_actions = {
+		major = yes
+		potential = {
+			ai = no
+			has_country_flag = allow_subterfuge_actions
+			pp_scripted_trigger_game_difficulty = yes
+		}
+		allow = {
+			ai = no
+		}
+		effect = {
+			country_event = { id = pp_event_subterfuge_actions.1 }
+		}
+		ai_will_do = {
+			factor = 0
+		}
+	}
+}

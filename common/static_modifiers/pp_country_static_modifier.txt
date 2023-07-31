@@ -1,0 +1,57 @@
+################################
+### Game Difficulty Modifier ###
+################################
+
+pp_static_modifier_game_difficulty_easy = {
+}
+pp_static_modifier_game_difficulty_normal = {
+}
+pp_static_modifier_game_difficulty_hard = {
+}
+
+#########################
+### Mission Modifiers ###
+#########################
+
+pp_mission_build_army_modifier = {
+	land_morale = 0.05
+	manpower_recovery_speed = 0.05
+	land_maintenance_modifier = -0.05
+}
+pp_mission_build_navy_modifier = {
+	naval_morale = 0.05
+	sailors_recovery_speed = 0.05
+	naval_maintenance_modifier = -0.05
+}
+pp_mission_build_economy_modifier = {
+	global_tax_modifier = 0.05
+	production_efficiency = 0.05
+	state_maintenance_modifier = -0.05
+}
+pp_mission_build_culture_modifier = {
+	promote_culture_cost = -0.05
+	culture_conversion_cost = -0.05
+	diplomatic_annexation_cost = -0.05
+}
+pp_mission_build_religion_modifier = {
+	missionaries = 1
+	global_missionary_strength = 0.01
+	global_heretic_missionary_strength = 0.01
+	missionary_maintenance_cost = -0.05
+	religious_unity = 0.05
+}
+pp_mission_build_pirates_modifier = {
+	privateer_efficiency = 0.05
+	embargo_efficiency = 0.05
+	global_ship_trade_power = 0.05
+}
+pp_mission_build_country_modifier = {
+	core_creation = -0.05
+	ae_impact = -0.05
+	global_autonomy = -0.02
+}
+pp_mission_build_empire_modifier = {
+	all_power_cost = -0.05
+	embracement_cost = -0.05
+	state_maintenance_modifier = -0.05
+}

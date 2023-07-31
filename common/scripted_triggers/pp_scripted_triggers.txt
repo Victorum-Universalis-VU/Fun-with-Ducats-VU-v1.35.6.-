@@ -1,0 +1,80 @@
+#########################
+### Scripted Triggers ###
+#########################
+
+pp_scripted_trigger_game_difficulty = { #Game Difficulty Trigger
+    OR = {
+        has_country_modifier = pp_static_modifier_game_difficulty_easy
+        has_country_modifier = pp_static_modifier_game_difficulty_normal
+        has_country_modifier = pp_static_modifier_game_difficulty_hard
+    }
+}
+pp_scripted_trigger_spy_network_requirement = { #Spy Network Requirement
+    if = {
+        limit = {
+            ROOT = {
+                has_country_modifier = pp_static_modifier_game_difficulty_easy
+                NOT = { has_country_modifier = pp_static_modifier_game_difficulty_normal }
+                NOT = { has_country_modifier = pp_static_modifier_game_difficulty_hard }
+            }
+        }
+        has_spy_network_from = {
+            who = ROOT
+            value = 30
+        }
+    }
+    else_if = {
+        limit = {
+            ROOT = {
+                NOT = { has_country_modifier = pp_static_modifier_game_difficulty_easy }
+                has_country_modifier = pp_static_modifier_game_difficulty_normal
+                NOT = { has_country_modifier = pp_static_modifier_game_difficulty_hard }
+            }
+        }
+        has_spy_network_from = {
+            who = ROOT
+            value = 45
+        }
+    }
+    else = {
+        has_spy_network_from = {
+            who = ROOT
+            value = 60
+        }
+    }
+}
+pp_scripted_trigger_culture_requirement = {
+    has_owner_culture = no
+    has_owner_accepted_culture = no
+    NOT = { has_construction = culture }
+	NOT = { has_construction = core }
+	NOT = { has_construction = building }
+    NOT = { nationalism = 1 }
+}
+pp_scripted_trigger_location_infantry_requirement = {
+	num_of_units_in_province = {
+		who = ROOT
+		type = infantry
+		amount = 1
+	}
+	NOT = {
+		num_of_units_in_province = {
+			who = ROOT
+			type = infantry
+			amount = 2
+		}
+	}
+}
+pp_scripted_trigger_is_core_check = {
+	NOT = { is_core = ROOT }
+	NOT = { has_construction = core }
+	NOT = { has_construction = building }
+}
+pp_scripted_trigger_fort_requirement = {
+    OR = {
+        has_building = fort_15th
+        has_building = fort_16th
+        has_building = fort_17th
+        has_building = fort_18th
+    }
+}

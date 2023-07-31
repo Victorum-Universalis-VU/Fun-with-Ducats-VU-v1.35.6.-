@@ -1,0 +1,237 @@
+############################
+### Secure Safe Missions ###
+############################
+pp_build_country_missions = {
+	slot = 1
+	generic = no
+	ai = no
+	has_country_shield = yes
+	potential = {
+		ai = no
+		has_country_flag = allow_open_secure_safe
+	}
+	pp_mission_build_army = {
+		icon = mission_build_up_to_force_limit
+		#generic = yes
+		ai = no
+		position = 12
+		required_missions = {  }
+		trigger = {
+			army_size_percentage = 1
+			manpower_percentage = 0.6
+		}
+		effect = {
+			add_mil_power = 100
+			FROM = {
+				pp_scripted_effect_game_difficulty_set_cost = yes
+			}
+			add_country_modifier = {
+				name = "pp_mission_build_army_modifier"
+				duration = -1
+			}
+		}
+	}
+	pp_mission_build_economy = {
+		icon = mission_high_income
+		#generic = yes
+		ai = no
+		required_missions = { pp_mission_build_army }
+		trigger = {
+			treasury = 100
+			stability = 1
+		}
+		effect = {
+			add_adm_power = 100
+			FROM = {
+				pp_scripted_effect_game_difficulty_set_cost = yes
+			}
+			add_country_modifier = {
+				name = "pp_mission_build_economy_modifier"
+				duration = -1
+			}
+		}
+	}
+	pp_mission_build_culture = {
+		icon = mission_alliances
+		#generic = yes
+		ai = no
+		required_missions = { pp_mission_build_economy }
+		trigger = {
+			stability = 2
+			NOT = { average_unrest = 1 }
+			dominant_culture = FROM
+		}
+		effect = {
+			add_dip_power = 100
+			FROM = {
+				pp_scripted_effect_game_difficulty_set_cost = yes
+			}
+			add_country_modifier = {
+				name = "pp_mission_build_culture_modifier"
+				duration = -1
+			}
+		}
+	}
+	pp_mission_build_religion = {
+		icon = mission_hands_praying
+		#generic = yes
+		ai = no
+		required_missions = { pp_mission_build_culture }
+		trigger = {
+			stability = 3
+			NOT = { average_unrest = 1 }
+			dominant_religion = FROM
+		}
+		effect = {
+			FROM = {
+				pp_scripted_effect_game_difficulty_set_cost = yes
+			}
+			add_country_modifier = {
+				name = "pp_mission_build_religion_modifier"
+				duration = -1
+			}
+		}
+	}
+	pp_mission_build_country = {
+		icon = mission_conquer_50_development
+		#generic = yes
+		ai = no
+		required_missions = { pp_mission_build_religion }
+		trigger = {
+			grown_by_development = 25
+		}
+		effect = {
+			FROM = {
+				pp_scripted_effect_game_difficulty_set_cost = yes
+			}
+			add_country_modifier = {
+				name = "pp_mission_build_country_modifier"
+				duration = -1
+			}
+		}
+	}
+}
+pp_build_navy_missions = {
+	slot = 2
+	generic = no
+	ai = no
+	has_country_shield = yes
+	potential = {
+		ai = no
+		has_country_flag = allow_open_secure_safe
+	}
+	pp_mission_build_navy = {
+		icon = mission_establish_high_seas_navy
+		#generic = yes
+		ai = no
+		position = 13
+		required_missions = { pp_mission_build_army }
+		trigger = {
+			navy_size_percentage = 1
+			sailors_percentage = 0.4
+		}
+		effect = {
+			FROM = {
+				pp_scripted_effect_game_difficulty_set_cost = yes
+			}
+			add_country_modifier = {
+				name = "pp_mission_build_navy_modifier"
+				duration = -1
+			}
+		}
+	}
+	pp_mission_build_pirates = {
+		icon = mission_war_chest
+		#generic = yes
+		ai = no
+		position = 15
+		required_missions = { pp_mission_build_navy }
+		trigger = {
+			num_of_light_ship = 10
+		}
+		effect = {
+			FROM = {
+				pp_scripted_effect_game_difficulty_set_cost = yes
+			}
+			add_country_modifier = {
+				name = "pp_mission_build_pirates_modifier"
+				duration = -1
+			}
+		}
+	}
+}
+pp_build_empire_missions = {
+	slot = 2
+	generic = no
+	ai = no
+	has_country_shield = yes
+	potential = {
+		ai = no
+		has_country_flag = allow_open_secure_safe
+	}
+	pp_mission_build_empire = {
+		icon = mission_pf_map_table
+		#generic = yes
+		ai = no
+		position = 17
+		required_missions = {
+			pp_mission_build_country
+			pp_mission_build_pirates
+		}
+		trigger = {
+			OR = {
+				AND = {
+					OR = {
+						vassal = 1
+						march = 1
+					}
+					calc_true_if = {
+						all_subject_country = {
+							has_opinion = {
+								who = ROOT
+								value = 190
+							}
+						}
+						amount = 1
+					}
+				}
+				AND = {
+					num_of_allies = 2
+					calc_true_if = {
+						all_ally = {
+							has_opinion = {
+								who = ROOT
+								value = 190
+							}
+						}
+						amount = 2
+					}
+				}
+				AND = {
+					personal_union = 1
+					calc_true_if = {
+						all_subject_country = {
+							has_opinion = {
+								who = ROOT
+								value = 190
+							}
+						}
+						amount = 1
+					}
+				}
+			}
+		}
+		effect = {
+			add_adm_power = 50
+			add_dip_power = 50
+			add_mil_power = 50
+			FROM = {
+				pp_scripted_effect_game_difficulty_set_cost = yes
+			}
+			add_country_modifier = {
+				name = "pp_mission_build_empire_modifier"
+				duration = -1
+			}
+		}
+	}
+}

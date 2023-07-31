@@ -1,0 +1,380 @@
+################################
+### Subterfuge Actions Event ###
+################################
+namespace = pp_event_subterfuge_actions
+country_event = {
+	id = pp_event_subterfuge_actions.1
+	title = pp_event_subterfuge_actions.1.t
+	desc = pp_event_subterfuge_actions.1.d
+	picture = ASSASSINATION_eventPicture
+
+	is_triggered_only = yes
+
+	trigger = {
+		ai = no
+		pp_scripted_trigger_game_difficulty = yes
+	}
+
+	#mean_time_to_happen = {}
+
+	#immediate = {}
+
+	#############################
+	### Inherit Bastard Child ###
+	#############################
+	option = {
+		name = pp_event_subterfuge_actions.1.a
+		trigger = {
+			has_heir = no
+		}
+		ROOT = {
+			define_heir = {
+				male = yes
+				dynasty = ROOT
+				age = 15
+				adm = 1
+				max_random_adm = 2
+				dip = 1
+				max_random_dip = 2
+				mil = 1
+				max_random_mil = 2
+				claim = 100
+				no_consort_with_heir = yes
+				culture = ROOT
+				religion = ROOT
+			}
+			pp_scripted_effect_corruption_cost = yes
+			pp_scripted_effect_game_difficulty_set_cost = yes
+		}
+	}
+	###############################################
+	### Support Revolutionary Rebels on Capital ###
+	###############################################
+	option = {
+		name = pp_event_subterfuge_actions.1.b
+		trigger = {
+			is_revolution_target = yes
+			NOT = { num_of_rebel_controlled_provinces = 1 }
+		}
+		ROOT = {
+			capital_scope = {
+				spawn_rebels = {
+					type = revolutionary_rebels
+					size = 3
+					win = no
+				}
+			}
+			pp_scripted_effect_corruption_cost = yes
+			pp_scripted_effect_game_difficulty_set_cost = yes
+		}
+	}
+	##############################################
+	### Incite Rebels in Neighboring Countries ###
+	##############################################
+	option = {
+		name = pp_event_subterfuge_actions.1.c
+		trigger = {
+			any_known_country = {
+				pp_scripted_trigger_spy_network_requirement = yes
+				NOT = { num_of_rebel_armies = 1 }
+				NOT = { is_enemy = ROOT }
+				OR = {
+					is_rival = ROOT
+					NOT = { is_rival = ROOT }
+				}
+			}
+		}
+		every_known_country = {
+			limit = {
+				pp_scripted_trigger_spy_network_requirement = yes
+				NOT = { num_of_rebel_armies = 1 }
+				NOT = { is_enemy = ROOT }
+				OR = {
+					is_rival = ROOT
+					NOT = { is_rival = ROOT }
+				}
+			}
+			random_owned_province = {
+				limit = {
+					NOT = { controlled_by = REB }
+				}
+				pp_scripted_effect_spawn_rebel_type = yes
+				owner = {
+					pp_scripted_effect_spy_network_cost = yes
+				}
+				ROOT = {
+					pp_scripted_effect_corruption_cost = yes
+					pp_scripted_effect_game_difficulty_set_cost = yes
+				}
+			}
+		}
+	}
+	########################################
+	### Incite Rebels in Rival Countries ###
+	########################################
+	option = {
+		name = pp_event_subterfuge_actions.1.e
+		trigger = {
+			any_rival_country = {
+				pp_scripted_trigger_spy_network_requirement = yes
+				NOT = { num_of_rebel_armies = 1 }
+			}
+		}
+		every_rival_country = {
+			limit = {
+				pp_scripted_trigger_spy_network_requirement = yes
+				NOT = { num_of_rebel_armies = 1 }
+			}
+			random_owned_province = {
+				limit = {
+					NOT = { controlled_by = REB }
+				}
+				pp_scripted_effect_spawn_rebel_type = yes
+				owner = {
+					pp_scripted_effect_spy_network_cost = yes
+				}
+				ROOT = {
+					pp_scripted_effect_corruption_cost = yes
+					pp_scripted_effect_game_difficulty_set_cost = yes
+				}
+			}
+		}
+	}
+	################################################
+	### Pilfer Ducats from Neighboring Countries ###
+	################################################
+	option = {
+		name = pp_event_subterfuge_actions.1.f
+		trigger = {
+			any_known_country = {
+				pp_scripted_trigger_spy_network_requirement = yes
+				NOT = { is_enemy = ROOT }
+				OR = {
+					is_rival = ROOT
+					NOT = { is_rival = ROOT }
+				}
+			}
+		}
+		every_known_country = {
+			limit = {
+				pp_scripted_trigger_spy_network_requirement = yes
+				NOT = { is_enemy = ROOT }
+				OR = {
+					is_rival = ROOT
+					NOT = { is_rival = ROOT }
+				}
+			}
+			pp_scripted_effect_spy_network_cost = yes
+			ROOT = {
+				add_years_of_income = 0.05
+			}
+		}
+	}
+	##########################################
+	### Pilfer Ducats from Rival Countries ###
+	##########################################
+	option = {
+		name = pp_event_subterfuge_actions.1.g
+		trigger = {
+			any_rival_country = {
+				pp_scripted_trigger_spy_network_requirement = yes
+			}
+		}
+		every_rival_country = {
+			limit = {
+				pp_scripted_trigger_spy_network_requirement = yes
+			}
+			pp_scripted_effect_spy_network_cost = yes
+			ROOT = {
+				add_years_of_income = 0.1
+			}
+		}
+	}
+	#############################################################
+	### Expel - Religious Zeal in ALL Provinces @ 1k Infantry ###
+	#############################################################
+	option = {
+		name = pp_event_subterfuge_actions.1.h
+		trigger = {
+			OR = {
+				num_of_owned_provinces_with = {
+					value = 1
+					has_province_modifier = religious_zeal_at_conv
+					has_owner_religion = no
+					pp_scripted_trigger_location_infantry_requirement = yes
+				}
+				any_subject_country = {
+					num_of_owned_provinces_with = {
+						value = 1
+						has_province_modifier = religious_zeal_at_conv
+						has_owner_religion = no
+						pp_scripted_trigger_location_infantry_requirement = yes
+					}
+				}
+			}
+		}
+		every_owned_province = {
+			limit = {
+				has_owner_religion = no
+				pp_scripted_trigger_location_infantry_requirement = yes
+			}
+			if = {
+				limit = {
+					has_province_modifier = religious_zeal_at_conv
+				}
+				remove_province_modifier = religious_zeal_at_conv
+				ROOT = {
+					pp_scripted_effect_corruption_cost = yes
+					pp_scripted_effect_game_difficulty_set_cost = yes
+				}
+			}
+		}
+		every_subject_country = {
+			every_owned_province = {
+				limit = {
+					has_owner_religion = no
+					pp_scripted_trigger_location_infantry_requirement = yes
+				}
+				if = {
+					limit = {
+						has_province_modifier = religious_zeal_at_conv
+					}
+					remove_province_modifier = religious_zeal_at_conv
+					ROOT = {
+						pp_scripted_effect_corruption_cost = yes
+						pp_scripted_effect_game_difficulty_set_cost = yes
+					}
+				}
+			}
+		}
+	}
+	#######################################################
+	### Change - Culture in ALL Provinces @ 1k Infantry ###
+	#######################################################
+	option = {
+		name = pp_event_subterfuge_actions.1.i
+		trigger = {
+			OR = {
+				num_of_owned_provinces_with = {
+					value = 1
+					pp_scripted_trigger_culture_requirement = yes
+					pp_scripted_trigger_location_infantry_requirement = yes
+				}
+				any_subject_country = {
+					num_of_owned_provinces_with = {
+						value = 1
+						pp_scripted_trigger_culture_requirement = yes
+						pp_scripted_trigger_location_infantry_requirement = yes
+					}
+				}
+			}
+		}
+		every_owned_province = {
+			limit = {
+				pp_scripted_trigger_location_infantry_requirement = yes
+			}
+			if = {
+				limit = {
+					pp_scripted_trigger_culture_requirement = yes #This does not work in the above limit, IDKW
+				}
+			hidden_effect = {
+				add_culture_construction = {
+					speed = 0.5
+					cost = 0
+				}
+			}
+			tooltip = {
+				change_culture = owner #Redundant, only for hover
+			}
+			ROOT = {
+				pp_scripted_effect_corruption_cost = yes
+				pp_scripted_effect_game_difficulty_set_cost = yes
+			}
+			}
+		}
+		every_subject_country = {
+			limit = {
+				num_of_owned_provinces_with = {
+					value = 1
+					pp_scripted_trigger_culture_requirement = yes
+					pp_scripted_trigger_location_infantry_requirement = yes
+				}
+			}
+			every_owned_province = {
+				limit = {
+					pp_scripted_trigger_culture_requirement = yes
+					pp_scripted_trigger_location_infantry_requirement = yes
+				}
+				hidden_effect = {
+					add_culture_construction = {
+						speed = 0.5
+						cost = 0
+					}
+				}
+				tooltip = {
+					change_culture = owner #Redundant, only for hover
+				}
+				ROOT = {
+					pp_scripted_effect_corruption_cost = yes
+					pp_scripted_effect_game_difficulty_set_cost = yes
+				}
+			}
+		}
+	}
+	########################################################
+	### Remove - Fort in Subject Provinces @ 1k Infantry ###
+	########################################################
+	option = {
+		name = pp_event_subterfuge_actions.1.j
+		trigger = {
+			any_subject_country = {
+				num_of_owned_provinces_with = {
+					value = 1
+					pp_scripted_trigger_location_infantry_requirement = yes
+					pp_scripted_trigger_fort_requirement = yes
+				}
+			}
+		}
+		random_subject_country = {
+			limit = {
+				num_of_owned_provinces_with = {
+					value = 1
+					pp_scripted_trigger_location_infantry_requirement = yes
+					pp_scripted_trigger_fort_requirement = yes
+				}
+			}
+			random_owned_province = {
+				limit = {
+					pp_scripted_trigger_location_infantry_requirement = yes
+					pp_scripted_trigger_fort_requirement = yes
+				}
+				if = {
+					limit = {
+						has_building = fort_15th
+					}
+					remove_building = fort_15th
+				}
+				else_if = {
+					limit = {
+						has_building = fort_16th
+					}
+					remove_building = fort_16th
+				}
+				else_if = {
+					limit = {
+						has_building = fort_17th
+					}
+					remove_building = fort_17th
+				}
+				else = {
+					remove_building = fort_18th
+				}
+			}
+		}
+	}
+	option = {
+		name = pp_event_do_nothing.1.z
+		highlight = yes
+		trigger = {	always = yes }
+	}
+}

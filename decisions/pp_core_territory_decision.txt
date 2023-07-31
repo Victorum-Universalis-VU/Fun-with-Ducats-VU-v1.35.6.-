@@ -1,0 +1,47 @@
+###############################
+### Core Territory Decision ###
+###############################
+
+country_decisions = {
+	pp_decision_core_territory = {
+		major = no
+		potential = {
+			ai = no
+			has_country_flag = allow_subterfuge_actions
+			pp_scripted_trigger_game_difficulty = yes
+		}
+		allow = {
+			ai = no
+			NOT = { num_of_loans = 1 }
+			num_of_owned_provinces_with = {
+				value = 1
+				pp_scripted_trigger_is_core_check = yes
+				pp_scripted_trigger_location_infantry_requirement = yes
+			}
+		}
+		effect = {
+			every_owned_province = {
+				limit = {
+					pp_scripted_trigger_is_core_check = yes
+					pp_scripted_trigger_location_infantry_requirement = yes
+				}
+				hidden_effect = {
+					add_core_construction = {
+						speed = 1
+						cost = 0
+					}
+				}
+				tooltip = {
+					add_core = owner #Redundant, only for hover
+				}
+				ROOT = {
+					pp_scripted_effect_corruption_cost = yes
+					pp_scripted_effect_game_difficulty_set_cost = yes
+				}
+			}
+		}
+		ai_will_do = {
+			factor = 0
+		}
+	}
+}

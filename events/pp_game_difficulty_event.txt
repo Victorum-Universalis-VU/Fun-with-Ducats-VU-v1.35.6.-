@@ -1,0 +1,88 @@
+#############################
+### Game Difficulty Event ###
+#############################
+namespace = pp_event_game_difficulty
+country_event = {
+	id = pp_event_game_difficulty.1
+	title = pp_event_game_difficulty.1.t
+	desc = pp_event_game_difficulty.1.d
+	picture = COMET_SIGHTED_eventPicture
+
+	#is_triggered_only = no
+
+	trigger = {
+		ai = no
+		ROOT = { was_player = yes }
+		NOT = { has_country_modifier = pp_static_modifier_game_difficulty_easy }
+		NOT = { has_country_modifier = pp_static_modifier_game_difficulty_normal }
+		NOT = { has_country_modifier = pp_static_modifier_game_difficulty_hard }
+	}
+
+	#mean_time_to_happen = {}
+
+	#immediate = {}
+
+	option = { ### Easy
+		name = pp_event_game_difficulty.1.a
+		trigger = {
+			always = yes
+		}
+		add_country_modifier = {
+			name = "pp_static_modifier_game_difficulty_easy"
+			duration = -1
+		}
+	}
+	option = { ### Normal
+		name = pp_event_game_difficulty.1.b
+		trigger = {
+			always = yes
+		}
+		add_country_modifier = {
+			name = "pp_static_modifier_game_difficulty_normal"
+			duration = -1
+		}
+	}
+	option = { ### Hard
+		name = pp_event_game_difficulty.1.c
+		trigger = {
+			always = yes
+		}
+		add_country_modifier = {
+			name = "pp_static_modifier_game_difficulty_hard"
+			duration = -1
+		}
+	}
+	option = { ### Easy + Subterfuge Actions
+		name = pp_event_game_difficulty.1.e
+		trigger = {
+			always = yes
+		}
+		set_country_flag = allow_subterfuge_actions
+		add_country_modifier = {
+			name = "pp_static_modifier_game_difficulty_easy"
+			duration = -1
+		}
+	}
+	option = { ### Normal + Subterfuge Actions
+		name = pp_event_game_difficulty.1.f
+		trigger = {
+			always = yes
+		}
+		set_country_flag = allow_subterfuge_actions
+		add_country_modifier = {
+			name = "pp_static_modifier_game_difficulty_normal"
+			duration = -1
+		}
+	}
+	option = { ### Hard + Subterfuge Actions
+		name = pp_event_game_difficulty.1.g
+		trigger = {
+			always = yes
+		}
+		set_country_flag = allow_subterfuge_actions
+		add_country_modifier = {
+			name = "pp_static_modifier_game_difficulty_hard"
+			duration = -1
+		}
+	}
+}

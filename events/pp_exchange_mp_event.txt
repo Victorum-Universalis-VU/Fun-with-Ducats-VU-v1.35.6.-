@@ -1,0 +1,99 @@
+#####################################
+### Exchange Monarch Points Event ###
+#####################################
+namespace = pp_event_exchange_mp
+country_event = {
+	id = pp_event_exchange_mp.1
+	title = pp_event_exchange_mp.1.t
+	desc = pp_event_exchange_mp.1.d
+	picture = GOOD_WITH_MONARCH_eventPicture
+
+	is_triggered_only = yes
+
+	trigger = {
+		ai = no
+		pp_scripted_trigger_game_difficulty = yes
+	}
+
+	#mean_time_to_happen = {}
+
+	#immediate = {}
+
+	option = {
+		name = pp_event_exchange_mp.1.a
+		trigger = {
+			adm_power = 100
+		}
+		ROOT = {
+			add_adm_power = -100
+			add_dip_power = 100
+			pp_scripted_effect_corruption_cost = yes
+			pp_scripted_effect_game_difficulty_set_cost = yes
+		}
+	}
+	option = {
+		name = pp_event_exchange_mp.1.b
+		trigger = {
+			adm_power = 100
+		}
+		ROOT = {
+			add_adm_power = -100
+			add_mil_power = 100
+			pp_scripted_effect_corruption_cost = yes
+			pp_scripted_effect_game_difficulty_set_cost = yes
+		}
+	}
+	option = {
+		name = pp_event_exchange_mp.1.c
+		trigger = {
+			dip_power = 100
+		}
+		ROOT = {
+			add_dip_power = -100
+			add_adm_power = 100
+			pp_scripted_effect_corruption_cost = yes
+			pp_scripted_effect_game_difficulty_set_cost = yes
+		}
+	}
+	option = {
+		name = pp_event_exchange_mp.1.e
+		trigger = {
+			dip_power = 100
+		}
+		ROOT = {
+			add_dip_power = -100
+			add_mil_power = 100
+			pp_scripted_effect_corruption_cost = yes
+			pp_scripted_effect_game_difficulty_set_cost = yes
+		}
+	}
+	option = {
+		name = pp_event_exchange_mp.1.f
+		trigger = {
+			mil_power = 100
+		}
+		ROOT = {
+			add_mil_power = -100
+			add_adm_power = 100
+			pp_scripted_effect_corruption_cost = yes
+			pp_scripted_effect_game_difficulty_set_cost = yes
+		}
+	}
+	option = {
+		name = pp_event_exchange_mp.1.g
+		trigger = {
+			mil_power = 100
+		}
+		ROOT = {
+			add_mil_power = -100
+			add_dip_power = 100
+			pp_scripted_effect_corruption_cost = yes
+			pp_scripted_effect_game_difficulty_set_cost = yes
+		}
+	}
+	option = {
+		name = pp_event_do_nothing.1.z
+		highlight = yes
+		trigger = {	always = yes }
+	}
+}

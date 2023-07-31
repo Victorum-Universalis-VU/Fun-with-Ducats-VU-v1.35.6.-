@@ -1,0 +1,22 @@
+#######################################
+### Hire Mercenary General Decision ###
+#######################################
+
+country_decisions = {
+	pp_decision_hire_mercenary_general = {
+		major = no
+		potential = {
+			ai = no
+			pp_scripted_trigger_game_difficulty = yes
+		}
+		allow = {
+			ai = no
+		}
+		effect = {
+			country_event = { id = pp_event_hire_mercenary_general.1 }
+		}
+		ai_will_do = {
+			factor = 0
+		}
+	}
+}

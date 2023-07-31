@@ -1,0 +1,27 @@
+########################################
+### Exchange Monarch Points Decision ###
+########################################
+
+country_decisions = {
+	pp_decision_exchange_mp = {
+		major = no
+		potential = {
+			ai = no
+			pp_scripted_trigger_game_difficulty = yes
+		}
+		allow = {
+			ai = no
+			OR = {
+				adm_power = 100
+				dip_power = 100
+				mil_power = 100
+			}
+		}
+		effect = {
+			country_event = { id = pp_event_exchange_mp.1 }
+		}
+		ai_will_do = {
+			factor = 0
+		}
+	}
+}
